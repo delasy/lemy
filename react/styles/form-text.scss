@@ -1,0 +1,14 @@
+@import './_vars';
+
+.ldc-form-text {
+  display: block;
+  font-family: $font-main;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  line-height: 16px;
+  margin-bottom: 0;
+  margin-top: $grid-gutter / 4;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}

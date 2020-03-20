@@ -1,0 +1,44 @@
+@import './_funcs';
+
+@mixin media-breakpoint-between ($lower, $upper) {
+  $max: breakpoint-max($upper);
+  $min: breakpoint-min($lower);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $min == null {
+    @include media-breakpoint-down ($upper) {
+      @content;
+    }
+  } @else if $max == null {
+    @include media-breakpoint-up ($lower) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-down ($name) {
+  $max: breakpoint-max($name);
+
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-up ($name) {
+  $min: breakpoint-min($name);
+
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}

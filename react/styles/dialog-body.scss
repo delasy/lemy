@@ -1,0 +1,6 @@
+@import './_vars';
+
+.ldc-dialog-body {
+  overflow: auto;
+  padding: $grid-gutter / 4 $grid-gutter $grid-gutter / 4 * 3;
+}

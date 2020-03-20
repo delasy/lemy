@@ -1,0 +1,26 @@
+.ldc-media {
+  display: block;
+  position: relative;
+  width: 100%;
+
+  &__wrapper {
+    background-color: #EFEFEF;
+    display: block;
+    overflow: hidden;
+  }
+
+  &__asset {
+    border-style: none;
+    user-select: none;
+    vertical-align: middle;
+    width: 100%;
+  }
+
+  &__overlay {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}

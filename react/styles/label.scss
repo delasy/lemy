@@ -1,0 +1,14 @@
+@import './_vars';
+
+.ldc-label {
+  display: block;
+  font-family: $font-main;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+  line-height: 18px;
+  margin-bottom: $grid-gutter / 4;
+  margin-top: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}

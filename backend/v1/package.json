@@ -1,0 +1,39 @@
+{
+  "name": "lemy-web-backend",
+  "version": "1.0.0",
+  "description": "Lemy Web Back-End",
+  "author": "Aaron Delasy <aaron@delasy.com>",
+  "private": true,
+  "dependencies": {
+    "apollo-server-express": "^2.11.0",
+    "bcrypt": "^4.0.1",
+    "cron": "^1.8.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.3",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "nodemailer": "^6.4.6",
+    "pg": "^7.18.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.5",
+    "validator": "^13.0.0"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "husky": "^4.2.3",
+    "sequelize-cli": "^5.5.1",
+    "standard": "^14.3.3",
+    "uuid": "^7.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
+  "scripts": {
+    "cron": "node cron.js",
+    "start": "node app.js",
+    "test": "standard"
+  }
+}

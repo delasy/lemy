@@ -1,0 +1,19 @@
+@import './_funcs';
+
+.ldc-navbar {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  left: 0;
+  padding: $grid-gutter / 2 $grid-gutter / 4 * 3;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  @each $color-name, $color-config in $colors {
+    &--#{$color-name} {
+      background-color: map-get($color-config, default);
+    }
+  }
+}

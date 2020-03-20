@@ -1,0 +1,43 @@
+@import './_vars';
+
+@function breakpoint-infix ($name) {
+  @return if(breakpoint-min($name) == null, '', '-#{$name}');
+}
+
+@function breakpoint-max ($name) {
+  $max: map-get($grid-breakpoints, $name);
+  @return if($max and $max > 0, $max - 0.02, null);
+}
+
+@function breakpoint-min ($name) {
+  $min: map-get($grid-breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@function get-on-color ($name) {
+  @return map-get(
+    map-get(
+      $colors,
+      map-get(
+        map-get($colors, $name),
+        on
+      )
+    ),
+    default
+  );
+}
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+
+  @return $string;
+}

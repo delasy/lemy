@@ -1,0 +1,79 @@
+@import './_vars';
+
+.ldc-text {
+  font-family: $font-main;
+  margin-bottom: 0;
+  margin-top: 0;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  &--headline1 {
+    font-size: 60px;
+    font-weight: 100;
+    letter-spacing: -0.5px;
+    line-height: 72px;
+  }
+
+  &--headline2 {
+    font-size: 48px;
+    font-weight: 100;
+    letter-spacing: 0;
+    line-height: 56px;
+  }
+
+  &--headline3 {
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    line-height: 46px;
+  }
+
+  &--headline4 {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 0.15px;
+    line-height: 36px;
+  }
+
+  &--headline5 {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 28px;
+  }
+
+  &--headline6 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.15px;
+    line-height: 24px;
+  }
+
+  &--subtitle1 {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.15px;
+    line-height: 18px;
+  }
+
+  &--subtitle2 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+    line-height: 18px;
+  }
+
+  &--body1 {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 18px;
+  }
+
+  &--body2 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    line-height: 18px;
+  }
+}

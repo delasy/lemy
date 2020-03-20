@@ -1,0 +1,97 @@
+$colors: (
+  black: (
+    default: #000000,
+    hover: #262626,
+    focus: #4C4C4C,
+    on: white
+  ),
+  error: (
+    default: #B10121,
+    hover: #BF3744,
+    focus: #CC5C65,
+    on: white
+  ),
+  primary: (
+    default: #6630B6,
+    hover: #7E50C1,
+    focus: #956FCD,
+    on: white
+  ),
+  secondary: (
+    default: #A1D6E2,
+    hover: #89B6C0,
+    focus: #72969E,
+    on: black
+  ),
+  white: (
+    default: #FFFFFF,
+    hover: #D9D9D9,
+    focus: #B3B3B3,
+    on: black
+  )
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+$font-main: (
+  -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  'Helvetica Neue',
+  sans-serif
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$grid-columns: 12;
+$grid-gutter: 20px;
+
+$icon-arrow-drop-down: 'data:image/svg+xml;utf8,' +
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">' +
+  '<path d="M7 10l5 5 5-5z" fill="currentColor"/></svg>';
+
+$utility-displays: (
+  block,
+  flex,
+  inline,
+  inline-block,
+  inline-flex,
+  none,
+  table,
+  table-cell,
+  table-row
+);
+
+$utility-margins: (
+  m: (margin),
+  mb: (margin-bottom),
+  ml: (margin-left),
+  mr: (margin-right),
+  mt: (margin-top),
+  mx: (margin-left, margin-right),
+  my: (margin-bottom, margin-top)
+);
+
+$utility-paddings: (
+  p: (padding),
+  pb: (padding-bottom),
+  pl: (padding-left),
+  pr: (padding-right),
+  pt: (padding-top),
+  px: (padding-left, padding-right),
+  py: (padding-bottom, padding-top)
+);

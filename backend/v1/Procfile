@@ -1,0 +1,3 @@
+clock: npm run cron
+release: npx sequelize-cli db:migrate
+web: npm start

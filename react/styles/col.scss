@@ -1,0 +1,33 @@
+@import './_mixins';
+
+@each $grid-breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($grid-breakpoint);
+
+  @include media-breakpoint-up ($grid-breakpoint) {
+    .ldc-col#{$infix} {
+      flex: 1 0 0;
+      max-width: 100%;
+      padding-left: $grid-gutter / 2;
+      padding-right: $grid-gutter / 2;
+      width: 100%;
+    }
+
+    .ldc-col#{$infix}-auto {
+      flex: 0 0 auto;
+      max-width: 100%;
+      padding-left: $grid-gutter / 2;
+      padding-right: $grid-gutter / 2;
+      width: auto;
+    }
+
+    @for $i from 1 through $grid-columns {
+      .ldc-col#{$infix}-#{$i} {
+        flex: 0 0 auto;
+        max-width: 100%;
+        padding-left: $grid-gutter / 2;
+        padding-right: $grid-gutter / 2;
+        width: percentage($i / $grid-columns);
+      }
+    }
+  }
+}

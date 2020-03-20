@@ -1,0 +1,11 @@
+@import './_vars';
+
+.ldc-dialog-footer {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: $grid-gutter / 2;
+  position: relative;
+}

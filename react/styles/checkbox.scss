@@ -1,0 +1,130 @@
+@import './_funcs';
+
+.ldc-checkbox {
+  align-items: center;
+  display: inline-flex;
+  min-height: 38px;
+  padding-left: 42px;
+  position: relative;
+  vertical-align: middle;
+  width: 100%;
+
+  @each $color-name, $color-config in $colors {
+    &--#{$color-name} {
+      .ldc-checkbox {
+        &__input {
+          &:checked ~ .ldc-checkbox__background {
+            background-color: map-get($color-config, default);
+          }
+
+          &:not(:disabled):hover {
+            &:checked ~ .ldc-checkbox__background {
+              background-color: map-get($color-config, hover);
+            }
+
+            ~ .ldc-checkbox__background {
+              border-color: map-get($color-config, hover);
+            }
+          }
+
+          &:not(:disabled):focus {
+            &:checked ~ .ldc-checkbox__background {
+              background-color: map-get($color-config, focus);
+            }
+
+            ~ .ldc-checkbox__background {
+              border-color: map-get($color-config, focus);
+            }
+          }
+        }
+
+        &__background {
+          border-color: map-get($color-config, default);
+
+          > .ldc-checkbox__checkmark {
+            color: get-on-color($color-name);
+          }
+        }
+
+        &__label {
+          color: map-get($color-config, default);
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    align-items: center;
+    display: inline-flex;
+    height: 38px;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: calc(50% - 38px / 2);
+    width: 38px;
+  }
+
+  &__input {
+    height: 38px;
+    left: 0;
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 38px;
+
+    &:checked ~ .ldc-checkbox__background {
+      > .ldc-checkbox__checkmark {
+        opacity: 1;
+      }
+    }
+
+    &:disabled ~ .ldc-checkbox__background {
+      opacity: 0.5;
+    }
+
+    &:not(:disabled) {
+      cursor: pointer;
+    }
+  }
+
+  &__background {
+    align-items: center;
+    background-color: transparent;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 2px;
+    display: inline-flex;
+    height: 18px;
+    justify-content: center;
+    pointer-events: none;
+    position: relative;
+    transition: background-color 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1),
+      border-color 90ms 0ms cubic-bezier(0.4, 0, 0.6, 1);
+    width: 18px;
+  }
+
+  &__checkmark {
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 180ms 0ms cubic-bezier(0.4, 0, 0.6, 1);
+    width: 100%;
+  }
+
+  &__label {
+    font-family: $font-main;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.25px;
+    line-height: 18px;
+    margin: 0;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+}

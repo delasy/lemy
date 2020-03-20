@@ -1,0 +1,55 @@
+@import './_mixins';
+
+@each $color-name, $color-config in $colors {
+  .bg-#{$color-name} {
+    background-color: map-get($color-config, default);
+  }
+
+  .text-#{$color-name} {
+    color: map-get($color-config, default);
+  }
+}
+
+@each $grid-breakpoint in map-keys($grid-breakpoints) {
+  $infix: breakpoint-infix($grid-breakpoint);
+
+  @include media-breakpoint-up ($grid-breakpoint) {
+    @each $utility-display in $utility-displays {
+      .d-#{$utility-display + $infix} {
+        display: $utility-display !important;
+      }
+    }
+
+    @for $i from 1 through 5 {
+      @each $utility-margin in map-keys($utility-margins) {
+        .#{$utility-margin + $infix}-#{$i} {
+          $margin-properties: map-get($utility-margins, $utility-margin);
+
+          @each $margin-property in $margin-properties {
+            #{$margin-property}: $i * ($grid-gutter / 4);
+          }
+        }
+      }
+
+      @each $utility-padding in map-keys($utility-paddings) {
+        .#{$utility-padding + $infix}-#{$i} {
+          $padding-properties: map-get($utility-paddings, $utility-padding);
+
+          @each $padding-property in $padding-properties {
+            #{$padding-property}: $i * ($grid-gutter / 4);
+          }
+        }
+      }
+    }
+
+    @each $utility-margin in map-keys($utility-margins) {
+      .#{$utility-margin + $infix}-auto {
+        $margin-properties: map-get($utility-margins, $utility-margin);
+
+        @each $margin-property in $margin-properties {
+          #{$margin-property}: auto;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "@lemy/react",
+  "version": "0.2.1",
+  "description": "Lemy Components for React",
+  "repository": "github:lemy-app/react",
+  "author": "Aaron Delasy <aaron@delasy.com>",
+  "main": "index.jsx",
+  "license": "MIT",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "material-design-icons": "^3.0.1",
+    "prop-types": "^15.7.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^6.0.25",
+    "@storybook/react": "^6.0.25",
+    "husky": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.2",
+    "standard": "^14.3.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
+  "keywords": [
+    "lemy components",
+    "lemy components react"
+  ],
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "scripts": {
+    "storybook-build": "build-storybook",
+    "storybook-start": "start-storybook -p 7070",
+    "test": "standard"
+  }
+}

@@ -1,0 +1,51 @@
+@import './_funcs';
+
+.ldc-select {
+  appearance: none;
+  background-color: transparent;
+  background-position: calc(100% - 4px) center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 1px;
+  display: block;
+  font-family: $font-main;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+  line-height: 18px;
+  outline: none;
+  padding: 9px 12px;
+  transition: border-color 150ms ease-in-out;
+  width: 100%;
+  word-wrap: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  @each $color-name, $color-config in $colors {
+    &--#{$color-name} {
+      $bg-image: str-replace(
+        $icon-arrow-drop-down,
+        'currentColor',
+        map-get($color-config, default)
+      );
+
+      background-image: url(str-replace($bg-image, '#', '%23'));
+      border-color: map-get($color-config, default);
+      color: map-get($color-config, default);
+
+      &:not(:disabled):hover {
+        border-color: map-get($color-config, hover);
+      }
+
+      &:not(:disabled):active, &:not(:disabled):focus {
+        border-color: map-get($color-config, focus);
+      }
+    }
+  }
+}

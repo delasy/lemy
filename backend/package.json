@@ -1,0 +1,39 @@
+{
+  "name": "@lemy/backend",
+  "version": "1.0.0",
+  "description": "Back-End of Lemy",
+  "repository": "github:lemy-app/backend",
+  "author": "Aaron Delasy <aaron@delasy.com>",
+  "homepage": "https://graph.lemy.app",
+  "private": true,
+  "dependencies": {
+    "apollo-server-express": "^2.19.0",
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "pg": "^8.4.2",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5",
+    "validator": "^13.1.17"
+  },
+  "devDependencies": {
+    "faker": "^5.1.0",
+    "husky": "^4.3.0",
+    "sequelize-cli": "^6.2.0",
+    "standard": "^16.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
+  "scripts": {
+    "build": "sequelize-cli db:migrate",
+    "dev": "node app.js",
+    "start": "node app.js",
+    "test": "standard"
+  }
+}

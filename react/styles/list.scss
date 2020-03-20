@@ -1,0 +1,9 @@
+@import './_vars';
+
+.ldc-list {
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: $grid-gutter / 4 0;
+  position: relative;
+}

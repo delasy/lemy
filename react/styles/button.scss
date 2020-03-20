@@ -1,0 +1,66 @@
+@import './_funcs';
+
+.ldc-button {
+  appearance: none;
+  border: 0;
+  border-radius: 8px;
+  display: inline-block;
+  font-family: $font-main;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1.25px;
+  line-height: 16px;
+  margin: 0;
+  min-width: 64px;
+  outline: none;
+  padding: 10px 12px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+  user-select: none;
+  vertical-align: middle;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &--sm {
+    border-radius: 6px;
+    font-size: 12px;
+    letter-spacing: 1.1px;
+    line-height: 16px;
+    min-width: 54px;
+    padding: 6px 8px;
+  }
+
+  &--lg {
+    border-radius: 10px;
+    font-size: 18px;
+    letter-spacing: 1.3px;
+    line-height: 22px;
+    min-width: 74px;
+    padding: 10px 14px;
+  }
+
+  @each $color-name, $color-config in $colors {
+    &--#{$color-name} {
+      background-color: map-get($color-config, default);
+      color: get-on-color($color-name);
+
+      &:not(:disabled):hover {
+        background-color: map-get($color-config, hover);
+      }
+
+      &:not(:disabled):active, &:not(:disabled):focus {
+        background-color: map-get($color-config, focus);
+      }
+    }
+  }
+}

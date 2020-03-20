@@ -1,0 +1,62 @@
+@import './_mixins';
+
+.ldc-list-item {
+  align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 16px;
+  position: relative;
+  text-decoration: none;
+
+  @each $color-name, $color-config in $colors {
+    &--#{$color-name} {
+      &[href] {
+        &:hover {
+          background-color: rgba(map-get($color-config, default), 0.05);
+        }
+      }
+
+      .ldc-list-item__line {
+        &-one {
+          color: map-get($color-config, default);
+        }
+
+        &-two {
+          color: map-get($color-config, focus);
+        }
+      }
+    }
+  }
+
+  &__lines {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__line {
+    &-one, &-two {
+      display: block;
+      font-family: $font-main;
+      margin-bottom: 0;
+      margin-top: 0;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    &-one {
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.15px;
+      line-height: 18px;
+    }
+
+    &-two {
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.25px;
+      line-height: 18px;
+      margin-top: 4px;
+    }
+  }
+}

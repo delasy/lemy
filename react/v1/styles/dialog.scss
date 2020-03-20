@@ -1,0 +1,27 @@
+@import 'vars';
+
+.ldc-dialog {
+  &__backdrop {
+    align-items: center;
+    background-color: rgba($color-black, 0.32);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  &__container {
+    &-header {
+    }
+
+    &-body {
+    }
+
+    &-footer {
+    }
+  }
+}

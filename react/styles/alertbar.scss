@@ -1,0 +1,42 @@
+@import './_mixins';
+
+.ldc-alertbar {
+  left: 0;
+  display: flex;
+  padding: $grid-gutter / 4;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  @each $color-name, $color-config in $colors {
+    &--#{$color-name} {
+      .ldc-alertbar__content {
+        background-color: map-get($color-config, default);
+        color: get-on-color($color-name);
+      }
+    }
+  }
+
+  &__content {
+    border-radius: 8px;
+    font-family: $font-main;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.25px;
+    line-height: 18px;
+    margin: 0;
+    min-width: 344px;
+    padding: 15px;
+    pointer-events: auto;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+
+    @include media-breakpoint-down (sm) {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+}

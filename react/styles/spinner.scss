@@ -1,0 +1,23 @@
+@import './_funcs';
+
+.ldc-spinner {
+  animation: ldc-spinner 750ms linear infinite;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 4px;
+  display: inline-block;
+  vertical-align: text-bottom;
+
+  @each $color-name, $color-config in $colors {
+    &--#{$color-name} {
+      border-color: map-get($color-config, default);
+      border-right-color: transparent;
+    }
+  }
+}
+
+@keyframes ldc-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

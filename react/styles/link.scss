@@ -1,0 +1,34 @@
+@import './_funcs';
+
+.ldc-link {
+  background-color: transparent;
+  font-family: $font-main;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-decoration: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  @each $color-name, $color-config in $colors {
+    &--#{$color-name} {
+      color: map-get($color-config, default);
+
+      &:hover {
+        color: map-get($color-config, hover);
+      }
+    }
+  }
+
+  &:not([href]), &:not([href]):hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}

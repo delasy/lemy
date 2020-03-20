@@ -1,0 +1,65 @@
+@import './_vars';
+
+.ldc-input {
+  appearance: none;
+  background-color: transparent;
+  border-style: solid;
+  border-radius: 8px;
+  border-width: 1px;
+  display: block;
+  font-family: $font-main;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.15px;
+  line-height: 18px;
+  margin: 0;
+  outline: none;
+  padding: 9px 12px;
+  transition: border-color 150ms ease-in-out;
+  width: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &[type="number"]::-webkit-inner-spin-button,
+  &[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  &[type="search"] {
+    outline-offset: -2px;
+    -webkit-appearance: none;
+  }
+
+  &[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-file-upload-button {
+    font: inherit;
+    -webkit-appearance: button;
+  }
+
+  @each $color-name, $color-config in $colors {
+    &--#{$color-name} {
+      border-color: map-get($color-config, default);
+      color: map-get($color-config, default);
+      caret-color: map-get($color-config, default);
+
+      &:not(:disabled):hover {
+        border-color: map-get($color-config, hover);
+      }
+
+      &:not(:disabled):active, &:not(:disabled):focus {
+        border-color: map-get($color-config, focus);
+      }
+
+      &::placeholder {
+        color: rgba(map-get($color-config, default), 0.5);
+      }
+    }
+  }
+}

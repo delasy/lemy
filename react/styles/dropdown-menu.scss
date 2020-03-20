@@ -1,0 +1,108 @@
+@import './_funcs';
+
+.ldc-dropdown-menu {
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  display: none;
+  min-width: 120px;
+  position: absolute;
+
+  &--show {
+    display: block;
+  }
+
+  &--down {
+    &-center {
+      left: 50%;
+      margin-top: $grid-gutter / 4;
+      top: 100%;
+      transform: translate(-50%, 0);
+      will-change: transform;
+    }
+
+    &-left {
+      margin-top: $grid-gutter / 4;
+      right: 0;
+      top: 100%;
+    }
+
+    &-right {
+      left: 0;
+      margin-top: $grid-gutter / 4;
+      top: 100%;
+    }
+  }
+
+  &--left {
+    &-center {
+      margin-right: $grid-gutter / 4;
+      right: 100%;
+      top: 50%;
+      transform: translate(0, -50%);
+      will-change: transform;
+    }
+
+    &-down {
+      margin-right: $grid-gutter / 4;
+      right: 100%;
+      top: 0;
+    }
+
+    &-up {
+      bottom: 0;
+      margin-right: $grid-gutter / 4;
+      right: 100%;
+    }
+  }
+
+  &--right {
+    &-center {
+      left: 100%;
+      margin-left: $grid-gutter / 4;
+      top: 50%;
+      transform: translate(0, -50%);
+      will-change: transform;
+    }
+
+    &-down {
+      left: 100%;
+      margin-left: $grid-gutter / 4;
+      top: 0;
+    }
+
+    &-up {
+      bottom: 0;
+      left: 100%;
+      margin-left: $grid-gutter / 4;
+    }
+  }
+
+  &--up {
+    &-center {
+      bottom: 100%;
+      left: 50%;
+      margin-bottom: $grid-gutter / 4;
+      transform: translate(-50%, 0);
+      will-change: transform;
+    }
+
+    &-left {
+      bottom: 100%;
+      margin-bottom: $grid-gutter / 4;
+      right: 0;
+    }
+
+    &-right {
+      bottom: 100%;
+      left: 0;
+      margin-bottom: $grid-gutter / 4;
+    }
+  }
+
+  @each $color-name, $color-config in $colors {
+    &--#{$color-name} {
+      border-color: map-get($color-config, default);
+    }
+  }
+}
